@@ -1,0 +1,43 @@
+# Strictly exclude ROMs, patches, saves, emulator states, and local databases
+*.gba
+*.gbc
+*.gb
+*.sav
+*.ss0
+*.ss1
+*.ss2
+*.ss3
+*.ss4
+*.ss5
+*.ss6
+*.ss7
+*.ss8
+*.ss9
+*.bps
+*.ips
+*.ups
+*.xdelta
+*.db
+*.sqlite
+*.sqlite3
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

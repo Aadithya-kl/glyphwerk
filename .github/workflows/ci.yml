@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-gates:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package with dev extras
+        run: python -m pip install --upgrade pip && pip install -e ".[dev]"
+      - name: Lint with ruff
+        run: ruff check glyphwerk tests examples
+      - name: Run synthetic unit & integration tests (zero ROMs required)
+        run: pytest -v
+      - name: Run synthetic end-to-end demo
+        run: python examples/minimal_synthetic_demo/run_demo.py
+      - name: Run repository hygiene & secret scan
+        run: glyphwerk secret-scan .

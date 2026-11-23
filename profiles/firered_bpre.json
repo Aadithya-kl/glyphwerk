@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "profile_id": "firered_bpre_rev0",
+  "title": "GBA Gen-3 FireRed (BPRE Rev 0) Structural Profile",
+  "rom_base_addr": "0x08000000",
+  "rom_max_size": 16777216,
+  "header_guard_end": "0x00000200",
+  "strcpy_addr": "0x081E5F88",
+  "font_widths_table": "0x001FB100",
+  "free_space": {
+    "fill_byte": "0xFF",
+    "min_run_bytes": 64,
+    "terminator_guard_bytes": 2,
+    "reserved_ranges": []
+  },
+  "script_banks": [
+    ["0x00160000", "0x001E0000"],
+    ["0x006B0000", "0x00720000"]
+  ],
+  "windows": {
+    "msgbox_standard": {"max_line_px": 208, "max_lines": 2},
+    "pokedex_entry": {"max_line_px": 230, "max_lines": 3},
+    "menu_compact": {"max_line_px": 120, "max_lines": 1}
+  },
+  "buffer_max_px": {
+    "FD01": 42,
+    "FD06": 42,
+    "default": 60
+  },
+  "wram_bpre": {
+    "save_block_1_ptr": "0x03005008",
+    "script_lock_byte": "0x03000F9C",
+    "main_cb2_ptr": "0x030030F4",
+    "battle_flags_addr": "0x03003529",
+    "string_var4_addr": "0x02021D18",
+    "base_flags_offset": "0x0EE0",
+    "base_flags_size": 288,
+    "ext_flags_addr": null,
+    "ext_flags_size": 0
+  }
+}
