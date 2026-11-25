@@ -1,0 +1,58 @@
+name: Bug report
+description: Something in Glyphwerk behaves wrong
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please do not attach ROMs, saves, patches or game text dumps.
+        A small synthetic input (a few bytes or a short string) is the best way to show the problem.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, what did you get?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Command or Python snippet with synthetic input. No ROM data.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Glyphwerk version
+      description: Output of `glyphwerk --version`
+      placeholder: glyphwerk 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Python version and OS
+      placeholder: Python 3.12, Ubuntu 24.04
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - codec (PCS encode/decode, widths)
+        - rom (pointers, relocation, free space, table guard)
+        - gates
+        - porter (tables, anchors, BPS wrapper, dex wrap)
+        - gfx (LZ77, tiles)
+        - bot
+        - CLI
+        - docs / profiles
+        - not sure
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Game data
+      options:
+        - label: My report contains no ROMs, saves, patches or game text dumps
+          required: true
