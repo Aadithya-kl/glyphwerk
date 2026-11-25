@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and chat (English or German)
+    url: https://discord.gg/fSkhHppgcv
+    about: Ask about using Glyphwerk in your own translation project.
+  - name: Security issue
+    url: https://github.com/pokemon-unbound-de/glyphwerk/blob/main/SECURITY.md
+    about: Please report security problems privately as described in SECURITY.md.

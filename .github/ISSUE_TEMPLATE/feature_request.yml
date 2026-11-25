@@ -1,0 +1,29 @@
+name: Feature or gate idea
+description: Suggest a new feature, gate, profile field or improvement
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve?
+      description: Which translation or porting step is hard today? A real example from your project helps (described in words, no game data).
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed solution
+      description: What should Glyphwerk do? Command, function or gate behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: How could it be tested synthetically?
+      description: Glyphwerk tests run without ROMs. What small generated input would show it works?
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to work on this myself
